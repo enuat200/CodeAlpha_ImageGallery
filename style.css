@@ -44,15 +44,32 @@ body{
     display:flex;
     flex-direction:column;
     min-height:100vh;
-
-    background-image:url("https://i.pinimg.com/1200x/9c/65/ec/9c65ec8c1d422d9e79e7f65d0a6cc84f.jpg");
-    background-repeat:no-repeat;
+background-image:url("https://i.pinimg.com/736x/28/5a/4f/285a4f2c30a9d46c0202262bd3f25e6c.jpg");
+   background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center;
+    backdrop-filter: blur(12px);
+    font-family:sans-serif;
+    position:relative;
+}
+.container{
+  background-image:url("https://i.pinimg.com/736x/28/5a/4f/285a4f2c30a9d46c0202262bd3f25e6c.jpg");
+   background-repeat:no-repeat;
     background-size:cover;
     background-position:center;
 
-    font-family:sans-serif;
-}
+    aspect-ratio: 3/4;           
+ 
+    margin: 70px;
+    height: 600px;
+    margin-left: 150px;
+    margin-right: 150px;
 
+
+}
+h1 , p{
+    color:white;
+}
 
 /* Image page */
 
@@ -140,21 +157,30 @@ nav{
     padding:20px 50px;
 }
 
-.top-bar{
-    display:flex;
-    gap:20px;
+.navbar {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  padding: 10px 20px;
+  background-color: white; 
+  opacity: 50% ;           
 }
+
+
 
 .nav-links a{
     text-decoration:none;
     font-size:20px;
     font-weight:bold;
+    margin-right: 20px;
 }
 
-h3{
-    margin:0;
+logo 
+{
+    margin-right:auto;
+    color:white;
+    
 }
-
 
 /* Main content */
 
@@ -169,6 +195,8 @@ h3{
 
     text-align:center;
     padding:50px;
+
+    
 }
 
 .content h1{
@@ -197,4 +225,15 @@ h3{
     color:white;
     text-align:center;
     padding:20px;
+}
+.btn{
+    height:30px;
+    background-color: rgb(172, 231, 147);
+    border-radius: 10%;
+    margin-bottom: 50px
+
+}
+getimage-btn
+{
+    color:white;
 }
