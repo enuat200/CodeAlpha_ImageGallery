@@ -44,7 +44,7 @@ body{
     display:flex;
     flex-direction:column;
     min-height:100vh;
-background-image:url("https://i.pinimg.com/736x/28/5a/4f/285a4f2c30a9d46c0202262bd3f25e6c.jpg");
+background-image:url("https://i.pinimg.com/736x/72/f2/ee/72f2ee14b6296c21daae512171dcf5ee.jpg");
    background-repeat:no-repeat;
     background-size:cover;
     background-position:center;
@@ -52,20 +52,19 @@ background-image:url("https://i.pinimg.com/736x/28/5a/4f/285a4f2c30a9d46c0202262
     font-family:sans-serif;
     position:relative;
 }
-.container{
-  background-image:url("https://i.pinimg.com/736x/28/5a/4f/285a4f2c30a9d46c0202262bd3f25e6c.jpg");
-   background-repeat:no-repeat;
-    background-size:cover;
-    background-position:center;
+.container {
+    width: 80%; /* Takes up most of the screen width */
+    max-width: 950px; /* Increased from 500px to make it much wider horizontally */
+    margin: 80px auto; /* Centers it with space at the top/bottom */
+    min-height: 600px;
 
-    aspect-ratio: 3/4;           
- 
-    margin: 70px;
-    height: 600px;
-    margin-left: 150px;
-    margin-right: 150px;
-
-
+    
+    /* Keep your existing background-image, border-radius, etc. here */
+    background-image: url("https://i.pinimg.com/736x/72/f2/ee/72f2ee14b6296c21daae512171dcf5ee.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px; 
 }
 h1 , p{
     color:white;
@@ -158,23 +157,37 @@ nav{
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between; 
-  align-items: center;
-  padding: 10px 20px;
-  background-color: white; 
-  opacity: 50% ;           
+    display: flex;
+    justify-content: space-between; /* This forces the left/right split */
+    align-items: center;
+    width: auto; /* Ensures the navbar stretches across the top */
+    padding: 15px 40px; /* Adds breathing room on the sides */
+    background-color: rgba(255, 255, 255, 0.5); /* Cleaner way to write 50% opacity */
+    box-sizing: border-box;
+    border-radius: 8px;
+     margin-top:20px; 
+     margin-left:20px;
+     margin-right:20px;
 }
 
-
-
-.nav-links a{
-    text-decoration:none;
-    font-size:20px;
-    font-weight:bold;
-    margin-right: 20px;
+/* If your links are inside a container, apply a gap */
+.nav-links {
+    display: flex;
+    gap: 20px; 
+    color: black;
+    
+    
 }
-
+.nav-links a {
+    text-decoration: none;
+    font-size: 18px; 
+    font-weight: bold;
+    color: black;
+    transition: color 0.3s ease;
+}
+.nav-links a:hover {
+    color: white;
+}
 logo 
 {
     margin-right:auto;
@@ -184,30 +197,31 @@ logo
 
 /* Main content */
 
-.content{
-    flex:1;
-    height:85vh;
-
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-    padding:50px;
-
-    
+.content {
+    flex: 1;
+    min-height: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Moves all content to the top */
+    align-items: center;
+    text-align: center;
+    padding: 100px 40px 40px; /* Added 100px top padding so the text doesn't hit the navbar */
+    box-sizing: border-box; 
 }
 
-.content h1{
-    font-size:60px;
-    margin-bottom:30px;
+.content h1 {
+    font-size: clamp(2.5rem, 8vw, 60px); 
+    margin-bottom: 50px; /* Creates the large vertical space below the heading */
+    line-height: 1.1;
+    word-wrap: break-word; 
 }
 
 .content p{
-    max-width:900px;
-    line-height:1.6;
-    margin-bottom:20px;
+   width: 100%; 
+    max-width: 100%; 
+    line-height: 1.6;
+    margin: 0 0 8px;
+    text-align: center;
 }
 
 
@@ -227,13 +241,28 @@ logo
     padding:20px;
 }
 .btn{
-    height:30px;
-    background-color: rgb(172, 231, 147);
-    border-radius: 10%;
-    margin-bottom: 50px
-
+    height:44px;
+    padding:10px 20px;
+    background-color: black;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255,255,255,0.35);
+    border-radius: 12px;
+    margin-top: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
-getimage-btn
-{
+
+.btn:hover{
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.32);
+}
+
+.getimage-btn{
     color:white;
+    text-decoration:none;
+    font-weight:bold;
+    display:inline-block;
+    line-height:1;
 }
