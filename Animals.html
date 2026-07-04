@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="nature-body">
+
+ <script src="script.js"></script>
+  <header class="navbar">
+        <span class="logo" id="logo">Gallery</span>
+        <div class="nav-links" id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="favorite.html">Favorites</a>
+            <a href="Gallary.html">Back</a>
+        </div>
+        
+      </header>
+ <figure class="images">
+
+<a class="narrow-img" onclick="openImage('https://i.pinimg.com/1200x/15/b3/12/15b312331da09efa42b0f0f91f05dc8d.jpg')">
+ <img  src="https://i.pinimg.com/1200x/15/b3/12/15b312331da09efa42b0f0f91f05dc8d.jpg"/>
+ 
+</a>
+<a class="wide-img" onclick="openImage('https://i.pinimg.com/736x/71/ed/60/71ed60d1b8d616f1e226e57a322274d0.jpg')">
+ <img src="https://i.pinimg.com/736x/71/ed/60/71ed60d1b8d616f1e226e57a322274d0.jpg"/>
+</a>
+<a class="wide-img" onclick="openImage('https://i.pinimg.com/736x/d2/c1/19/d2c119a5ee03ecc2ef5c6db132d28c02.jpg')">
+    <img src="https://i.pinimg.com/736x/d2/c1/19/d2c119a5ee03ecc2ef5c6db132d28c02.jpg"/>
+</a>
+<a class="narrow-img" onclick="openImage('https://i.pinimg.com/1200x/9b/ad/40/9bad405bcccf846335fe2949bae6e0aa.jpg')">
+ <img src="https://i.pinimg.com/1200x/9b/ad/40/9bad405bcccf846335fe2949bae6e0aa.jpg"/>
+</a>
+<a class="narrow-img" onclick="openImage('https://i.pinimg.com/736x/40/09/66/40096697ce401f0cebfb8326b056e780.jpg')">
+     <img src="https://i.pinimg.com/736x/40/09/66/40096697ce401f0cebfb8326b056e780.jpg"/>
+</a>
+<a class="wide-img"  onclick ="openImage('https://i.pinimg.com/736x/bb/a0/b2/bba0b244afb651caca98acfaed95286a.jpg')">
+     <img src="https://i.pinimg.com/736x/bb/a0/b2/bba0b244afb651caca98acfaed95286a.jpg"/>
+</a>
+<a class="wide-img" onclick ="openImage('https://i.pinimg.com/736x/52/4b/22/524b22ee166cdc008330e3d65836b55a.jpg')">
+     <img src="https://i.pinimg.com/736x/52/4b/22/524b22ee166cdc008330e3d65836b55a.jpg"/>
+</a>
+<a class="narrow-img" onclick ="openImage('https://i.pinimg.com/736x/52/4b/22/524b22ee166cdc008330e3d65836b55a.jpg')">
+     <img src="https://i.pinimg.com/736x/52/4b/22/524b22ee166cdc008330e3d65836b55a.jpg"/>
+</a>
+</figure>
+<script>
+function openImage(url){
+    window.location.href =
+        "image-view.html?img=" + encodeURIComponent(url);
+}
+</script>
+ </body>
+ </body></html>
+</body>
+</html>
