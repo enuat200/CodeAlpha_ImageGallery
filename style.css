@@ -38,7 +38,7 @@
 
 /* Body */
 
-.body{
+body{
     margin:0;
     padding:0;
     display:flex;
@@ -52,7 +52,7 @@ background-image:url("https://i.pinimg.com/736x/72/f2/ee/72f2ee14b6296c21daae512
     font-family:sans-serif;
     position:relative;
 }
-.nature-body
+/*.nature-body
 {
     margin:0;
     padding:0;
@@ -66,7 +66,7 @@ background-image:url("https://i.pinimg.com/736x/5d/e2/99/5de2993e32618a934d59d9b
     backdrop-filter: blur(12px);
     font-family:sans-serif;
     position:relative;
-} 
+} */
 .nature-img
 {
     background-color:light green;
