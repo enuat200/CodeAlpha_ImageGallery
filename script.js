@@ -1,10 +1,22 @@
-const params = new URLSearchParams(window.location.search);
 
-const imageUrl = params.get("img");
 
-document.getElementById("fullImage").src = imageUrl;
+document.addEventListener('DOMContentLoaded', () => {
+    
 
-document.querySelector(".back-btn")
-.addEventListener("click", function(){
-    history.back();
+    const fullImage = document.getElementById("fullImage");
+    if (fullImage) {
+        const params = new URLSearchParams(window.location.search);
+        const imageUrl = params.get("img");
+        if (imageUrl) {
+            fullImage.src = imageUrl;
+        }
+    }
+
+    const backBtn = document.querySelector(".back-btn");
+    if (backBtn) {
+        backBtn.addEventListener("click", function(){
+            history.back();
+        });
+    }
+
 });

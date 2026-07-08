@@ -193,68 +193,161 @@ h1 , p{
 .pos-right { transform: translateX(180px) scale(0.90); opacity: 0.8; z-index: 3; }
 .pos-right-far { transform: translateX(340px) scale(0.75); opacity: 0.5; z-index: 2; }
 
-/* Image page */
+/* Image-view-page */
 
-.image-container{
-    position:relative;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    width:100vw;
-    height:100vh;
-    padding:20px;
-  
-
+.image-container {
+    /*position: relative;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+   /* background-color: #111827;*/
+}
+.image-box {
+    position: relative; /* Crucial: This anchors the absolute buttons! */
+   width: 85vw;
+    height: 70vh;
+    max-width: 800px;   
+    max-height: 600px; 
 }
 
-#fullImage{
-    width:800px;
-    max-width:100%;
-    display:block;
-}
-
-.fullscreen-image{
-    width:85vw;
-    height:70vh;
-    max-width:800px;
-    max-height:600px;
-    object-fit:cover;
-    border-radius:24px;
-
+.fullscreen-image {
+    width: 85vw;
+    height: 70vh;
+    max-width: 800px;
+    max-height: 600px;
+    object-fit: cover;
+    border-radius: 24px;
+    display: block;
+    
+    /* Your awesome shadow configuration */
     box-shadow:
-    0 20px 25px -5px rgba(0,0,0,0.5),
-    0 10px 10px -5px rgba(0,0,0,0.4);
+        0 20px 25px -5px rgba(0,0,0,0.5),
+        0 10px 10px -5px rgba(0,0,0,0.4);
 }
 
 
 /* Back button */
 
-.back-btn{
-    position:absolute;
-    top:15px;
-    left:15px;
-    color:#38bdf8;
-
-    padding:10px 15px;
-    border:none;
-    border-radius:5px;
-    cursor:pointer;
-
-    z-index:1000;
-    transition:color .2s ease;
+.back-btn {
+    position: absolute;
+    top: 20px;      /* Pushed slightly into the image for a clean overlay look */
+    left: 20px;     
+    z-index: 10;    
+    padding: 10px 15px;
+    cursor: pointer;
+    background: rgba(51, 51, 51, 0.8); 
+    color: white;
+    border: none;
+    border-radius: 12px; /* Smoother match with image rounded corners */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.back-btn:hover{
-    color:#bae6fd;
+.back-btn:hover {
+    background: rgba(51, 51, 51, 1);
+    transform: scale(1.05);
 }
 
+/* 5. Favorite Button (Now relative to the image corner!) */
+.fav-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10;
+    padding: 8px 12px;
+    font-size: 22px; 
+    cursor: pointer;
+    background: rgba(51, 51, 51, 0.8); 
+    color: white; 
+    border: none;
+    border-radius: 12px; /* Matches back button */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    transition: color 0.2s ease, transform 0.2s ease;
+}
 
+.fav-btn:hover {
+    transform: scale(1.1);
+}
+
+.fav-btn.active {
+    color: #ff4757; 
+}
+.fav-title
+{
+    text-align: center;
+    color:black;
+    font-size: bold;
+}
+
+/*favorite page*/
+
+.favorites-header {
+    display: flex;
+    flex-direction: column;  /* Stacks elements vertically */
+    align-items: flex-start; /* Aligns both the button and text to the left */
+    gap: 15px;               /* Clean space between the button and text */
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.favorites-header h1 {
+    font-size: 36px;
+    font-weight: 800;
+    color: #000000;          /* Solid black text */
+    text-align: left;
+    margin: 0;
+}
+
+.favorites-header .back-btn {
+    position: static;        /* Removes absolute positioning */
+    transform: none;         /* Clears vertical centering offset */
+    
+    /* Your existing button design */
+    padding: 10px 15px;
+    cursor: pointer;
+    background: rgba(51, 51, 51, 0.8); 
+    color: white;
+    border: none;
+    border-radius: 12px; 
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.favorites-header .back-btn:hover {
+    background: rgba(51, 51, 51, 1);
+    transform: scale(1.05);
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.fav-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.fav-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover; 
+    display: block;
+}
 /* Image hover effects */
 .images {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    grid-auto-rows: auto; /* Dynamically sizes row heights based on content */
+    grid-auto-rows: auto; 
     align-items: stretch;
     gap: 16px; 
     max-width: 1200px;
