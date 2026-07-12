@@ -61,13 +61,10 @@ background-image:url("https://i.pinimg.com/736x/72/f2/ee/72f2ee14b6296c21daae512
 
 }
 .container {
-    width: 80%; /* Takes up most of the screen width */
-    max-width: 950px; /* Increased from 500px to make it much wider horizontally */
-    margin: 80px auto; /* Centers it with space at the top/bottom */
+    width: 80%; 
+    max-width: 950px; 
+    margin: 80px auto; 
     min-height: 600px;
-
-    
-    /* Keep your existing background-image, border-radius, etc. here */
     background-image: url("https://i.pinimg.com/736x/72/f2/ee/72f2ee14b6296c21daae512171dcf5ee.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -98,7 +95,7 @@ h1 , p{
   height: 550px;
   width: 100%;
   position: relative;
-   /* Added a 30px gap at the bottom before buttons */
+   
 }
 
 /* Polaroid Card Styles */
@@ -107,7 +104,6 @@ h1 , p{
   display: flex;
   flex-direction: column;
   background: #ffffff;
- /* padding: 12px 12px 24px 12px; */
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   text-decoration: none;
   width: 280px;
@@ -145,13 +141,13 @@ h1 , p{
 /* Button Row Container Styles */
 .controls-container {
   display: flex;
-  gap: 20px; /* Space between Prev and Next buttons */
+  gap: 20px; 
   justify-content: center;
   z-index: 20;
  
 }
 
-/* Updated Button Styles to fit cleanly below */
+
 .nav-btn {
   background: #ffffff;
   color: #333333;
@@ -160,7 +156,7 @@ h1 , p{
   font-weight: bold;
   padding: 10px 20px;
   cursor: pointer;
-  border-radius: 20px; /* Capsule shape buttons */
+  border-radius: 20px; 
   box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   transition: background 0.3s, color 0.3s;
 }
@@ -171,7 +167,7 @@ h1 , p{
   border-color: #333333;
 }
 
-/* --- JAVASCRIPT SHIFTING STATES --- */
+/* JAVASCRIPT SHIFTING STATEs */
 .pos-hidden { transform: translateX(0) scale(0.5); opacity: 0; z-index: 1; pointer-events: none; }
 .pos-left-far { transform: translateX(-340px) scale(0.75); opacity: 0.5; z-index: 2; }
 .pos-left { transform: translateX(-180px) scale(0.90); opacity: 0.8; z-index: 3; }
@@ -182,7 +178,6 @@ h1 , p{
 /* Image-view-page */
 
 .image-container {
-    /*position: relative;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -191,10 +186,9 @@ h1 , p{
     height: 100vh;
     padding: 20px;
     box-sizing: border-box;
-   /* background-color: #111827;*/
 }
 .image-box {
-    position: relative; /* Crucial: This anchors the absolute buttons! */
+    position: relative; 
    width: 85vw;
     height: 70vh;
     max-width: 800px;   
@@ -209,8 +203,6 @@ h1 , p{
     object-fit: cover;
     border-radius: 24px;
     display: block;
-    
-    /* Your awesome shadow configuration */
     box-shadow:
         0 20px 25px -5px rgba(0,0,0,0.5),
         0 10px 10px -5px rgba(0,0,0,0.4);
@@ -221,7 +213,7 @@ h1 , p{
 
 .back-btn {
     position: absolute;
-    top: 20px;      /* Pushed slightly into the image for a clean overlay look */
+    top: 20px;      
     left: 20px;     
     z-index: 10;    
     padding: 10px 15px;
@@ -229,7 +221,7 @@ h1 , p{
     background: rgba(51, 51, 51, 0.8); 
     color: white;
     border: none;
-    border-radius: 12px; /* Smoother match with image rounded corners */
+    border-radius: 12px; 
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     transition: background 0.2s ease, transform 0.2s ease;
 }
@@ -239,7 +231,7 @@ h1 , p{
     transform: scale(1.05);
 }
 
-/* 5. Favorite Button (Now relative to the image corner!) */
+/* 5. Favorite Button  */
 .fav-btn {
     position: absolute;
     top: 20px;
@@ -251,7 +243,7 @@ h1 , p{
     background: rgba(51, 51, 51, 0.8); 
     color: white; 
     border: none;
-    border-radius: 12px; /* Matches back button */
+    border-radius: 12px; 
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     transition: color 0.2s ease, transform 0.2s ease;
 }
@@ -274,9 +266,9 @@ h1 , p{
 
 .favorites-header {
     display: flex;
-    flex-direction: column;  /* Stacks elements vertically */
-    align-items: flex-start; /* Aligns both the button and text to the left */
-    gap: 15px;               /* Clean space between the button and text */
+    flex-direction: column;  
+    align-items: flex-start; 
+    gap: 15px;             
     padding: 20px;
     width: 100%;
     box-sizing: border-box;
@@ -285,16 +277,14 @@ h1 , p{
 .favorites-header h1 {
     font-size: 36px;
     font-weight: 800;
-    color: #000000;          /* Solid black text */
+    color: #000000;         
     text-align: left;
     margin: 0;
 }
 
 .favorites-header .back-btn {
-    position: static;        /* Removes absolute positioning */
-    transform: none;         /* Clears vertical centering offset */
-    
-    /* Your existing button design */
+    position: static;       
+    transform: none;      
     padding: 10px 15px;
     cursor: pointer;
     background: rgba(51, 51, 51, 0.8); 
@@ -362,19 +352,18 @@ h1 , p{
 }
 
 @media (min-width: 600px) {
-    /* Narrow image: Spans 1 column, taller aspect ratio */
+    
     .narrow-img {
         grid-column: span 1;
         
     }
 
-    /* Wide image: Spans 2 columns, horizontal aspect ratio */
     .wide-img {
         grid-column: span 2;
         aspect-ratio: 2 / 1; 
     }
 
-    /* Full width image: Spans all 3 columns underneath */
+
     .full-width-img {
         grid-column: span 3;
         aspect-ratio: 3 / 1; 
@@ -416,11 +405,10 @@ nav{
 
 .navbar {
     display: flex;
-    justify-content: space-between; /* This forces the left/right split */
+    justify-content: space-between; /
     align-items: center;
-    width: auto; /* Ensures the navbar stretches across the top */
-    padding: 15px 40px; /* Adds breathing room on the sides */
-    /*background-color: rgba(255, 255, 255, 0.5);  */
+    width: auto; 
+    padding: 15px 40px;
     box-sizing: border-box;
     border-radius: 8px;
      margin-top:20px; 
@@ -428,7 +416,7 @@ nav{
      margin-right:20px;
 }
 
-/* If your links are inside a container, apply a gap */
+
 .nav-links {
     display: flex;
     gap: 20px; 
